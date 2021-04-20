@@ -1,15 +1,8 @@
 def convert(number):
-    string = ""
-    if number % 3 == 0:
-        string += "Pling"
+    factor_sounds = {3: 'Pling', 5: 'Plang', 7: 'Plong'}
+    string = ''
+    for key, value in factor_sounds.items():
+        if number % key == 0:
+            string += value
 
-    if number % 5 == 0:
-        string += "Plang"
-
-    if number % 7 == 0:
-        string += "Plong"
-
-    if number % 3 != 0 and number % 5 != 0 and number % 7 != 0:
-        return str(number)
-
-    return string
+    return string or str(number)
